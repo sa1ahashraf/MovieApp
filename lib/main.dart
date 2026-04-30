@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/layout/main_layout.dart';
 
 void main() {
@@ -10,6 +11,10 @@ class MovieApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: const MainLayout());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: const MainLayout(),
+      theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
+    );
   }
 }
