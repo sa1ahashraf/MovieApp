@@ -12,6 +12,7 @@ class MovieApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const MainLayout(),
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
     );
