@@ -1,3 +1,4 @@
+import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/constants/views_list.dart';
 
 import 'package:flutter/material.dart';
@@ -16,9 +17,9 @@ class _MainLayoutState extends State<MainLayout> {
     return Scaffold(
       body: views[currentIndex],
       bottomNavigationBar: NavigationBar(
+        backgroundColor: kbarColor,
         indicatorColor: Color.fromARGB(255, 161, 175, 179),
         selectedIndex: currentIndex,
-        // animationDuration: Duration(milliseconds: 150),
         onDestinationSelected: (selcetedIndex) {
           setState(() {
             currentIndex = selcetedIndex;
