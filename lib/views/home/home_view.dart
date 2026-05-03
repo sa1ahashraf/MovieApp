@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
 import 'package:movie_app/views/home/components/home_app_bar.dart';
 import 'package:movie_app/views/home/components/movie_item.dart';
+import 'package:movie_app/views/home/components/movie_top_rated_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -37,6 +38,17 @@ class HomeView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Customtext(text: "Top Rated"),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 270,
+              child: ListView.builder(
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: const MovieCard(),
+                ),
+              ),
             ),
           ),
         ],

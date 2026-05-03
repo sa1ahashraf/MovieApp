@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
+import 'package:movie_app/shared/components/movie_poster.dart';
 import 'package:movie_app/shared/components/rate_style.dart';
 
 class MovieItem extends StatelessWidget {
@@ -11,16 +12,7 @@ class MovieItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          width: 150,
-          height: 210,
-          child: ClipRRect(
-            borderRadius: BorderRadiusGeometry.circular(24),
-            child: Image.network(
-              "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-            ),
-          ),
-        ),
+        SizedBox(height: 210, width: 150, child: MoviePoster(w: 20, h: 40)),
         Padding(
           padding: const EdgeInsets.only(right: 40, top: 7),
           child: Customtext(text: "Batman return", fonSize: 10),
