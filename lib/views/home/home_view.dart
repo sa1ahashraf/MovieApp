@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
+import 'package:movie_app/views/details/details_view.dart';
 import 'package:movie_app/views/home/components/home_app_bar.dart';
 import 'package:movie_app/views/home/components/movie_item.dart';
 import 'package:movie_app/views/home/components/movie_top_rated_card.dart';
@@ -29,7 +30,12 @@ class HomeView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: const MovieItem(),
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => DetailsView()),
+                    ),
+                    child: const MovieItem(),
+                  ),
                 ),
               ),
             ),
@@ -40,12 +46,14 @@ class HomeView extends StatelessWidget {
               child: Customtext(text: "Top Rated"),
             ),
           ),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 270,
-              child: ListView.builder(
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: GestureDetector(
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => DetailsView()),
+                  ),
                   child: const MovieCard(),
                 ),
               ),

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
 class DefaultAppBar extends StatelessWidget {
-  final IconButton? leadingicn;
-
-  const DefaultAppBar({super.key, this.leadingicn});
+  final bool isArrowActive;
+  const DefaultAppBar({super.key, this.isArrowActive = false});
 
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
       preferredSize: Size.fromHeight(kToolbarHeight),
       child: AppBar(
+        automaticallyImplyLeading: isArrowActive,
         backgroundColor: kbarColor,
-        leading: leadingicn,
+
         title: Padding(
           padding: const EdgeInsets.only(left: 30),
           child: Text(
