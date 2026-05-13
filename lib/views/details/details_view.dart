@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
 import 'package:movie_app/shared/components/default_app_bar.dart';
+import 'package:movie_app/shared/components/movie_poster.dart';
 import 'package:movie_app/views/details/components/actor_photo.dart';
 import 'package:movie_app/views/details/components/background_cover.dart';
+import 'package:movie_app/views/details/components/custom_floationg_action_button.dart';
+import 'package:movie_app/views/details/components/story_line_text.dart';
 
 class DetailsView extends StatelessWidget {
   const DetailsView({super.key});
@@ -10,6 +13,8 @@ class DetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: CustomFloatingActionButton(),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: DefaultAppBar(isArrowActive: true),
@@ -29,9 +34,7 @@ class DetailsView extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
-              child: const Text(
-                "In a future where sound has become a deadly weapon, a lone explorer must navigate the ruins of a once-great civilization to find the key to silence. As she traverses the neon-drenched landscapes, she discovers that the greatest threat might not be the noise outside, but the secrets buried deep within her own past.",
-              ),
+              child: StoryLineText(),
             ),
           ),
           SliverToBoxAdapter(
@@ -50,6 +53,28 @@ class DetailsView extends StatelessWidget {
                   child: ActorPhoto(),
                 ),
                 itemCount: 10,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              child: const Customtext(text: "More Like This"),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: SizedBox(
+                child: Row(
+                  children: [
+                    const Spacer(flex: 1),
+                    MoviePoster(w: 160, h: 210),
+                    const Spacer(flex: 2),
+                    MoviePoster(w: 160, h: 210),
+                    const Spacer(flex: 1),
+                  ],
+                ),
               ),
             ),
           ),

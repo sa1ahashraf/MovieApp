@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/views/details/details_view.dart';
 
 class MoviePoster extends StatelessWidget {
   final double w;
@@ -7,13 +8,18 @@ class MoviePoster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(24),
-      child: Image.network(
-        "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-        width: w,
-        height: h,
-        fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: () => Navigator.of(
+        context,
+      ).push(MaterialPageRoute(builder: (context) => DetailsView())),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24),
+        child: Image.network(
+          "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+          width: w,
+          height: h,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
