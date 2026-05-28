@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
 import 'package:movie_app/views/home/components/home_app_bar.dart';
 import 'package:movie_app/views/home/components/movie_item.dart';
@@ -10,6 +11,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kbackGroundColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: HomeAppBar(),

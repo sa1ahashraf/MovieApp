@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
 import 'package:movie_app/shared/components/default_app_bar.dart';
 import 'package:movie_app/views/search/components/could_not_found_movies.dart';
@@ -10,7 +11,7 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff8f9fb),
+      backgroundColor: kbackGroundColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: DefaultAppBar(),
