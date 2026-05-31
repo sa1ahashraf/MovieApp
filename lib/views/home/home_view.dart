@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
 import 'package:movie_app/views/home/components/home_app_bar.dart';
 import 'package:movie_app/views/home/components/movie_item.dart';
+import 'package:movie_app/views/home/components/movie_top_rated_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,6 +11,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kbackGroundColor,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: HomeAppBar(),
@@ -37,6 +40,14 @@ class HomeView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Customtext(text: "Top Rated"),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: const MovieCard(),
+              ),
             ),
           ),
         ],
