@@ -10,7 +10,11 @@ class LogOutTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        DialogHelper.customDialogMethod(context);
+        DialogHelper(
+          title: 'Confirm Logout',
+          content: 'Are you sure you want logout?',
+          button_word: 'confirm',
+        ).customDialogMethod(context);
       },
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(
