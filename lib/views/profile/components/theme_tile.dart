@@ -3,9 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/views/profile/components/leading_icon.dart';
 
-class ThemeTile extends StatelessWidget {
-  const ThemeTile({super.key});
+class ThemeTile extends StatefulWidget {
+  ThemeTile({super.key});
+  bool isDark = false;
 
+  @override
+  State<ThemeTile> createState() => _ThemeTileState();
+}
+
+class _ThemeTileState extends State<ThemeTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -24,8 +30,12 @@ class ThemeTile extends StatelessWidget {
       title: const Text('Dark Mode'),
       trailing: CupertinoSwitch(
         activeTrackColor: kprimaryColor,
-        value: true,
-        onChanged: (_) {},
+        value: widget.isDark,
+        onChanged: (val) {
+          setState(() {
+            widget.isDark = val;
+          });
+        },
       ),
     );
   }
