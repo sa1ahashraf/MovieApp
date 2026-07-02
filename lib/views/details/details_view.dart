@@ -4,7 +4,7 @@ import 'package:movie_app/shared/components/default_app_bar.dart';
 import 'package:movie_app/shared/components/movie_poster.dart';
 import 'package:movie_app/views/details/components/actor_photo.dart';
 import 'package:movie_app/views/details/components/background_cover.dart';
-import 'package:movie_app/views/details/components/custom_floationg_action_button.dart';
+import 'package:movie_app/shared/components/custom_floationg_action_button.dart';
 import 'package:movie_app/views/details/components/story_line_text.dart';
 
 class DetailsView extends StatelessWidget {
@@ -14,7 +14,10 @@ class DetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: CustomFloatingActionButton(),
+      floatingActionButton: CustomFloatingActionButton(
+        icon: Icon(Icons.play_arrow),
+        buttonName: 'Watch trailer',
+      ),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: DefaultAppBar(isArrowActive: true),
