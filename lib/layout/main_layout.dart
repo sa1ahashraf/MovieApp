@@ -18,7 +18,7 @@ class _MainLayoutState extends State<MainLayout> {
       body: views[currentIndex],
       bottomNavigationBar: NavigationBar(
         backgroundColor: kbarColor,
-        indicatorColor: Color.fromARGB(255, 161, 175, 179),
+        indicatorColor: Colors.transparent,
         selectedIndex: currentIndex,
         onDestinationSelected: (selcetedIndex) {
           setState(() {
@@ -26,11 +26,20 @@ class _MainLayoutState extends State<MainLayout> {
           });
         },
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-          NavigationDestination(icon: Icon(Icons.search), label: "Search"),
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: "Home",
+            selectedIcon: Icon(Icons.home, color: Color(0xFF00505F)),
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.search),
+            label: "Search",
+            selectedIcon: Icon(Icons.search, color: Color(0xFF00505F)),
+          ),
           NavigationDestination(
             icon: Icon(Icons.person_outline),
             label: "Profile",
+            selectedIcon: Icon(Icons.person, color: Color(0xFF00505F)),
           ),
         ],
       ),
