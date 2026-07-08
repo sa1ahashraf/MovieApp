@@ -14,25 +14,25 @@ class EditProfileView extends StatefulWidget {
 }
 
 class _EditProfileViewState extends State<EditProfileView> {
-  late final TextEditingController namecontroller;
+  late final TextEditingController nameController;
 
-  late final TextEditingController emailcontroller;
+  late final TextEditingController emailController;
 
-  late final TextEditingController usernamecontroller;
+  late final TextEditingController usernameController;
 
   @override
   void initState() {
     super.initState();
-    namecontroller = TextEditingController(text: 'sa1ah ashraf');
-    emailcontroller = TextEditingController(text: 'sa1ah@gmail.com');
-    usernamecontroller = TextEditingController(text: 'sa111ah');
+    nameController = TextEditingController(text: 'sa1ah ashraf');
+    emailController = TextEditingController(text: 'sa1ah@gmail.com');
+    usernameController = TextEditingController(text: 'sa111ah');
   }
 
   @override
   void dispose() {
-    namecontroller.dispose();
-    emailcontroller.dispose();
-    usernamecontroller.dispose();
+    nameController.dispose();
+    emailController.dispose();
+    usernameController.dispose();
     super.dispose();
   }
 
@@ -64,7 +64,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             const Text('Full Name'),
             CustomDataField(
               hintText: 'Enter your name',
-              controller: namecontroller,
+              controller: nameController,
               icon: Icon(Icons.person_outlined),
             ),
 
@@ -73,7 +73,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             const Text('Email'),
             CustomDataField(
               hintText: 'example@gmail.com',
-              controller: emailcontroller,
+              controller: emailController,
               icon: const Icon(Icons.email_outlined),
             ),
 
@@ -82,7 +82,7 @@ class _EditProfileViewState extends State<EditProfileView> {
             const Text('Username'),
             CustomDataField(
               hintText: 'Enter your user name',
-              controller: usernamecontroller,
+              controller: usernameController,
               icon: const Icon(Icons.alternate_email),
             ),
             const Text(
