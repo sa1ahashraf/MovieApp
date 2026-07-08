@@ -37,6 +37,11 @@ class _MainLayoutState extends State<MainLayout> {
             selectedIcon: Icon(Icons.search, color: Color(0xFF00505F)),
           ),
           NavigationDestination(
+            icon: Icon(Icons.bookmark_border),
+            label: "WatchList",
+            selectedIcon: Icon(Icons.bookmark, color: Color(0xFF00505F)),
+          ),
+          NavigationDestination(
             icon: Icon(Icons.person_outline),
             label: "Profile",
             selectedIcon: Icon(Icons.person, color: Color(0xFF00505F)),
