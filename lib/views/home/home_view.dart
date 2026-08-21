@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 import 'package:movie_app/shared/components/custom_text.dart';
 import 'package:movie_app/views/home/components/home_app_bar.dart';
-import 'package:movie_app/views/home/components/movie_item.dart';
+import 'package:movie_app/shared/components/movie_item.dart';
 import 'package:movie_app/views/home/components/movie_top_rated_card.dart';
 
 class HomeView extends StatelessWidget {

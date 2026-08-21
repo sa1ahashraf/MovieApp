@@ -81,12 +81,12 @@ class _EditProfileViewState extends State<EditProfileView> {
 
             const Text('Username'),
             CustomDataField(
-              hintText: 'Enter your user name',
+              hintText: 'Enter your username',
               controller: usernameController,
               icon: const Icon(Icons.alternate_email),
             ),
             const Text(
-              'Uername must be unique',
+              'Username must be unique',
               style: TextStyle(color: Colors.grey),
             ),
             const SizedBox(height: 40),
