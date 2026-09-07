@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/views/Edit_Prodfile/edit_profile_view.dart';
+import 'package:movie_app/core/routing/app_routes.dart';
 import 'package:movie_app/views/profile/components/leading_icon.dart';
 
 class EditProfileTile extends StatelessWidget {
@@ -10,9 +10,7 @@ class EditProfileTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(
-          context,
-        ).push(MaterialPageRoute(builder: (context) => EditProfileView()));
+        Navigator.pushNamed(context, AppRoutes.details);
       },
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(

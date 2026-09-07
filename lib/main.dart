@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/layout/main_layout.dart';
+import 'package:movie_app/core/routing/app_router.dart';
+import 'package:movie_app/core/routing/app_routes.dart';
 
 void main() {
   runApp(const MovieApp());
@@ -13,7 +14,8 @@ class MovieApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const MainLayout(),
+      initialRoute: AppRoutes.login,
+      onGenerateRoute: AppRouter.generateRoute,
       theme: ThemeData(textTheme: GoogleFonts.poppinsTextTheme()),
     );
   }

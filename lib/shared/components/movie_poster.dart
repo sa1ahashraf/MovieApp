@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/views/details/details_view.dart';
+import 'package:movie_app/core/routing/app_routes.dart';
 
 class MoviePoster extends StatelessWidget {
   final double w;
@@ -9,9 +9,7 @@ class MoviePoster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.of(
-        context,
-      ).push(MaterialPageRoute(builder: (context) => DetailsView())),
+      onTap: () => Navigator.pushNamed(context, AppRoutes.details),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(24),
         child: Image.network(
