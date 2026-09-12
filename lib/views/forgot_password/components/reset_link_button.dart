@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
-class SignButton extends StatelessWidget {
-  final String txt;
-  final double? width;
-  const SignButton({super.key, required this.txt, this.width});
+class ResetLinkButton extends StatelessWidget {
+  const ResetLinkButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? double.infinity,
+      width: double.infinity,
       height: 50,
       child: ElevatedButton(
         style: ButtonStyle(
@@ -17,7 +15,15 @@ class SignButton extends StatelessWidget {
           foregroundColor: WidgetStatePropertyAll(Colors.white),
         ),
         onPressed: () {},
-        child: Text('Sign $txt', style: TextStyle(fontSize: 18)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'SEND RESET LINK',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
       ),
     );
   }

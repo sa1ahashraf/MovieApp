@@ -3,6 +3,7 @@ import 'package:movie_app/shared/components/app_branding.dart';
 import 'package:movie_app/shared/components/copyright_widget.dart';
 import 'package:movie_app/shared/components/custom_email_field.dart';
 import 'package:movie_app/shared/components/custom_password_field.dart';
+import 'package:movie_app/shared/components/customized_container_widget.dart';
 import 'package:movie_app/shared/components/default_app_bar.dart';
 import 'package:movie_app/shared/components/sing_button.dart';
 import 'package:movie_app/views/register/components/already_have_an_acc_widget.dart';
@@ -22,19 +23,7 @@ class RegisterView extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 30),
-            child: Container(
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 4),
-                    color: Colors.black.withValues(alpha: 0.08),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
+            child: CustomizedContainerWidget(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -76,7 +65,7 @@ class RegisterView extends StatelessWidget {
                   const SizedBox(height: 50),
                   SignButton(txt: 'up'),
                   const SizedBox(height: 20),
-                  AlreadyHaveAnAccWidget(),
+                  AlreadyHaveAnAccWidget(txt: 'Don\'t have an accont ?'),
                 ],
               ),
             ),

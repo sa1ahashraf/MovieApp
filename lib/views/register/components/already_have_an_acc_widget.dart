@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
 class AlreadyHaveAnAccWidget extends StatelessWidget {
-  const AlreadyHaveAnAccWidget({super.key});
+  final String txt;
+  const AlreadyHaveAnAccWidget({super.key, required this.txt});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Don\'t have an accont ?'),
+        Text(txt),
         TextButton(
           style: ButtonStyle(
             shadowColor: WidgetStatePropertyAll<Color?>(kprimaryColor),

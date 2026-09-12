@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/layout/main_layout.dart';
 import 'package:movie_app/views/Edit_Prodfile/edit_profile_view.dart';
 import 'package:movie_app/views/details/details_view.dart';
+import 'package:movie_app/views/forgot_password/forgot_password_view.dart';
 import 'package:movie_app/views/login/login_view.dart';
 import 'package:movie_app/views/register/register_view.dart';
 
@@ -19,10 +20,8 @@ class AppRouter {
       case AppRoutes.register:
         return MaterialPageRoute(builder: (_) => const RegisterView());
 
-      // case AppRoutes.forgetPassword:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const ForgetPasswordView(),
-      //   );
+      case AppRoutes.forgetPassword:
+        return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
 
       case AppRoutes.details:
         return MaterialPageRoute(builder: (_) => const DetailsView());

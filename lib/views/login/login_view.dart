@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/shared/components/app_branding.dart';
 import 'package:movie_app/shared/components/custom_email_field.dart';
 import 'package:movie_app/shared/components/custom_password_field.dart';
+import 'package:movie_app/shared/components/customized_container_widget.dart';
 import 'package:movie_app/views/login/components/forget_pass_widget.dart';
 import 'package:movie_app/views/login/components/have_an_account_widget.dart';
 import 'package:movie_app/shared/components/sing_button.dart';
@@ -25,18 +26,7 @@ class LoginView extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 16, right: 16, top: 20),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 4),
-                        color: Colors.black.withValues(alpha: 0.08),
-                        blurRadius: 10,
-                      ),
-                    ],
-                  ),
+                child: CustomizedContainerWidget(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 24,
