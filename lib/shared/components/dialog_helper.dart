@@ -4,9 +4,14 @@ import 'package:movie_app/constants/colors.dart';
 class DialogHelper {
   final String title;
   final String content;
+  // ignore: non_constant_identifier_names
   final String button_word;
 
-  DialogHelper({required this.title, required this.content, required this.button_word});
+  DialogHelper({
+    required this.title,
+    required this.content,
+    required this.button_word,
+  });
   void customDialogMethod(BuildContext context) {
     showDialog(
       context: context,

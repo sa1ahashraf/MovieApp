@@ -3,6 +3,7 @@ import 'package:movie_app/layout/main_layout.dart';
 import 'package:movie_app/views/Edit_Prodfile/edit_profile_view.dart';
 import 'package:movie_app/views/details/details_view.dart';
 import 'package:movie_app/views/login/login_view.dart';
+import 'package:movie_app/views/register/register_view.dart';
 
 import 'app_routes.dart';
 
@@ -15,10 +16,8 @@ class AppRouter {
       case AppRoutes.login:
         return MaterialPageRoute(builder: (_) => const LoginView());
 
-      // case AppRoutes.register:
-      //   return MaterialPageRoute(
-      //     builder: (_) => const RegisterView(),
-      //   );
+      case AppRoutes.register:
+        return MaterialPageRoute(builder: (_) => const RegisterView());
 
       // case AppRoutes.forgetPassword:
       //   return MaterialPageRoute(

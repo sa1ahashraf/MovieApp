@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
-import 'package:movie_app/core/routing/app_routes.dart';
 
-class HaveAnAccountWidget extends StatelessWidget {
-  const HaveAnAccountWidget({super.key});
+class AlreadyHaveAnAccWidget extends StatelessWidget {
+  const AlreadyHaveAnAccWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +11,14 @@ class HaveAnAccountWidget extends StatelessWidget {
       children: [
         const Text('Don\'t have an accont ?'),
         TextButton(
+          style: ButtonStyle(
+            shadowColor: WidgetStatePropertyAll<Color?>(kprimaryColor),
+          ),
           onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.register);
+            Navigator.pop(context);
           },
           child: Text(
-            'Sign up',
+            'Sign in',
             style: TextStyle(color: kprimaryColor, fontWeight: FontWeight(800)),
           ),
         ),

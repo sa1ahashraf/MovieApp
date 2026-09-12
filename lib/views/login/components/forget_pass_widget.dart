@@ -7,10 +7,14 @@ class ForgetPassWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, bottom: 20),
-      child: Text(
-        'ForgetPassword?',
-        style: TextStyle(color: kprimaryColor, fontWeight: FontWeight.bold),
+      padding: const EdgeInsets.only(top: 5, bottom: 15),
+      child: TextButton(
+        style: ButtonStyle(shadowColor: WidgetStatePropertyAll(Colors.green)),
+        onPressed: () {},
+        child: Text(
+          'ForgotPassword?',
+          style: TextStyle(color: kprimaryColor, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

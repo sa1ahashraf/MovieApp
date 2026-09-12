@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
-class SignInButton extends StatelessWidget {
-  const SignInButton({super.key});
+class SignButton extends StatelessWidget {
+  final String txt;
+  const SignButton({super.key, required this.txt});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class SignInButton extends StatelessWidget {
           foregroundColor: WidgetStatePropertyAll(Colors.white),
         ),
         onPressed: () {},
-        child: Text('Sign in', style: TextStyle(fontSize: 18)),
+        child: Text('Sign $txt', style: TextStyle(fontSize: 18)),
       ),
     );
   }

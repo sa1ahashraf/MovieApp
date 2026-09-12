@@ -15,7 +15,7 @@ class CustomPasswordField extends StatefulWidget {
 }
 
 class _CustomPasswordFieldState extends State<CustomPasswordField> {
-  bool isObscure = true;
+  bool isObscure = false;
   @override
   Widget build(BuildContext context) {
     return TextField(
