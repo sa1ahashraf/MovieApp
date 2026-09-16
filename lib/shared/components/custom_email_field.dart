@@ -27,6 +27,10 @@ class CustomEmailField extends StatelessWidget {
       },
       controller: controller,
       decoration: InputDecoration(
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(24),
+        ),
         filled: true,
         hintText: hintText,
         fillColor: kbackgroundFieldsColor,

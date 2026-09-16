@@ -31,6 +31,11 @@ class _CustomPasswordFieldState extends State<ConfirmPasswordField> {
       },
       obscureText: isObscure,
       decoration: InputDecoration(
+        errorBorder: OutlineInputBorder(
+         borderSide: BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(24),
+        
+        ),
         suffixIcon: IconButton(
           onPressed: () => {
             setState(() {

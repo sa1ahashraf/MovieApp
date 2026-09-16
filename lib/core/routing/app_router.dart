@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/cubits/login_cubit/login_cubit.dart';
+import 'package:movie_app/cubits/register_cubit/register_cubit.dart';
 import 'package:movie_app/layout/main_layout.dart';
 import 'package:movie_app/views/Edit_Prodfile/edit_profile_view.dart';
 import 'package:movie_app/views/details/details_view.dart';
@@ -15,10 +18,18 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MainLayout());
 
       case AppRoutes.login:
-        return MaterialPageRoute(builder: (_) => LoginView());
+        return MaterialPageRoute(
+          builder: (_) =>
+              BlocProvider(create: (_) => LoginCubit(), child: LoginView()),
+        );
 
       case AppRoutes.register:
-        return MaterialPageRoute(builder: (_) => const RegisterView());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => RegisterCubit(),
+            child: const RegisterView(),
+          ),
+        );
 
       case AppRoutes.forgetPassword:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
