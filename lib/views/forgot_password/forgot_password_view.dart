@@ -57,7 +57,7 @@ class ForgotPasswordView extends StatelessWidget {
                       ),
                       const Align(
                         alignment: Alignment.centerLeft,
-                        child: const Text('Email Address'),
+                        child: Text('Email Address'),
                       ),
                       const SizedBox(height: 5),
                       ForgotPasswordField(

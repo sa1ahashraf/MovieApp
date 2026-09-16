@@ -15,7 +15,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MainLayout());
 
       case AppRoutes.login:
-        return MaterialPageRoute(builder: (_) => const LoginView());
+        return MaterialPageRoute(builder: (_) => LoginView());
 
       case AppRoutes.register:
         return MaterialPageRoute(builder: (_) => const RegisterView());

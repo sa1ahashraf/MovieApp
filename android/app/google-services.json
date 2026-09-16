@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "384705339602",
+    "project_id": "kik-movies",
+    "storage_bucket": "kik-movies.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:384705339602:android:bd0a742b6f32b091184d0b",
+        "android_client_info": {
+          "package_name": "com.example.movie_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGYcKG3Y4mwjFuLedyzJo8qFZjs7s0-FQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

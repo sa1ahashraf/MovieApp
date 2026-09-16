@@ -4,7 +4,15 @@ import 'package:movie_app/constants/colors.dart';
 class SignButton extends StatelessWidget {
   final String txt;
   final double? width;
-  const SignButton({super.key, required this.txt, this.width});
+  final bool isLoading;
+  final void Function()? onPressed;
+  const SignButton({
+    super.key,
+    required this.txt,
+    this.width,
+    this.onPressed,
+    this.isLoading = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +24,10 @@ class SignButton extends StatelessWidget {
           backgroundColor: WidgetStatePropertyAll(kprimaryColor),
           foregroundColor: WidgetStatePropertyAll(Colors.white),
         ),
-        onPressed: () {},
-        child: Text('Sign $txt', style: TextStyle(fontSize: 18)),
+        onPressed: isLoading ? null : onPressed,
+        child: isLoading
+            ? CircularProgressIndicator(color: Colors.white)
+            : Text('Sign $txt', style: TextStyle(fontSize: 18)),
       ),
     );
   }

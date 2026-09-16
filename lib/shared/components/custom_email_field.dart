@@ -4,15 +4,28 @@ import 'package:movie_app/constants/colors.dart';
 class CustomEmailField extends StatelessWidget {
   final Icon icon;
   final String hintText;
+  final TextEditingController controller;
   const CustomEmailField({
     super.key,
     required this.icon,
     required this.hintText,
+    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Email is required';
+        } else if (!RegExp(
+          r'^[a-zA-Z0-9._%+-]+@gmail\.com$',
+        ).hasMatch(value.trim())) {
+          return 'This is an invalid email';
+        }
+        return null;
+      },
+      controller: controller,
       decoration: InputDecoration(
         filled: true,
         hintText: hintText,

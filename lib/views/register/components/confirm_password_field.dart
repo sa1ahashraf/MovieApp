@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
-class CustomPasswordField extends StatefulWidget {
+class ConfirmPasswordField extends StatefulWidget {
   final Icon icon;
   final String hintText;
   final TextEditingController controller;
-  const CustomPasswordField({
+  const ConfirmPasswordField({
     super.key,
     required this.icon,
     required this.hintText,
@@ -13,10 +13,10 @@ class CustomPasswordField extends StatefulWidget {
   });
 
   @override
-  State<CustomPasswordField> createState() => _CustomPasswordFieldState();
+  State<ConfirmPasswordField> createState() => _CustomPasswordFieldState();
 }
 
-class _CustomPasswordFieldState extends State<CustomPasswordField> {
+class _CustomPasswordFieldState extends State<ConfirmPasswordField> {
   bool isObscure = true;
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,11 @@ class _CustomPasswordFieldState extends State<CustomPasswordField> {
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Password is required';
+        } else if (widget.controller.text.trim() != value.trim()) {
+          return 'Password is Not Matching';
         }
         return null;
       },
-      controller: widget.controller,
       obscureText: isObscure,
       decoration: InputDecoration(
         suffixIcon: IconButton(

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
-class CustomPasswordField extends StatefulWidget {
+class UsernameField extends StatelessWidget {
   final Icon icon;
   final String hintText;
   final TextEditingController controller;
-  const CustomPasswordField({
+  const UsernameField({
     super.key,
     required this.icon,
     required this.hintText,
@@ -13,40 +13,20 @@ class CustomPasswordField extends StatefulWidget {
   });
 
   @override
-  State<CustomPasswordField> createState() => _CustomPasswordFieldState();
-}
-
-class _CustomPasswordFieldState extends State<CustomPasswordField> {
-  bool isObscure = true;
-  @override
   Widget build(BuildContext context) {
     return TextFormField(
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Password is required';
+          return 'Username is required';
         }
         return null;
       },
-      controller: widget.controller,
-      obscureText: isObscure,
+      controller: controller,
       decoration: InputDecoration(
-        suffixIcon: IconButton(
-          onPressed: () => {
-            setState(() {
-              isObscure = !isObscure;
-            }),
-          },
-          icon: Icon(
-            isObscure
-                ? Icons.visibility_outlined
-                : Icons.visibility_off_outlined,
-          ),
-        ),
         filled: true,
-        hintText: widget.hintText,
+        hintText: hintText,
         fillColor: kbackgroundFieldsColor,
-        focusColor: kprimaryColor,
-        prefixIcon: widget.icon,
+        prefixIcon: icon,
         prefixIconColor: Colors.grey,
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white.withAlpha(0), width: 1),

@@ -8,8 +8,9 @@ import 'package:movie_app/views/login/components/have_an_account_widget.dart';
 import 'package:movie_app/shared/components/sing_button.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
-
+  LoginView({super.key});
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,12 +38,14 @@ class LoginView extends StatelessWidget {
                       children: [
                         const Text('Email Address'),
                         CustomEmailField(
+                          controller: emailController,
                           hintText: 'name@gmail.com',
                           icon: Icon(Icons.email_outlined),
                         ),
                         const SizedBox(height: 30),
                         const Text('Password'),
                         CustomPasswordField(
+                          controller: passwordController,
                           hintText: 'Enter Your Password',
                           icon: Icon(Icons.email_outlined),
                         ),
