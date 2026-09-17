@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/cubits/forgot_password_cubit/forgot_password_cubit.dart';
 import 'package:movie_app/cubits/login_cubit/login_cubit.dart';
 import 'package:movie_app/cubits/register_cubit/register_cubit.dart';
 import 'package:movie_app/layout/main_layout.dart';
@@ -32,7 +33,12 @@ class AppRouter {
         );
 
       case AppRoutes.forgetPassword:
-        return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => ForgotPasswordCubit(),
+            child: const ForgotPasswordView(),
+          ),
+        );
 
       case AppRoutes.details:
         return MaterialPageRoute(builder: (_) => const DetailsView());

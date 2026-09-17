@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/constants/colors.dart';
 
 class ResetLinkButton extends StatelessWidget {
-  const ResetLinkButton({super.key});
+  final void Function()? onPressed;
+  final bool isLoading;
+  const ResetLinkButton({super.key, this.onPressed, required this.isLoading});
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +16,18 @@ class ResetLinkButton extends StatelessWidget {
           backgroundColor: WidgetStatePropertyAll(kprimaryColor),
           foregroundColor: WidgetStatePropertyAll(Colors.white),
         ),
-        onPressed: () {},
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'SEND RESET LINK',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
+        onPressed: isLoading ? null : onPressed,
+        child: isLoading
+            ? CircularProgressIndicator(color: Colors.white)
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'SEND RESET LINK',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
       ),
     );
   }

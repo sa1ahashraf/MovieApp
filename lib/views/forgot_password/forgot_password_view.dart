@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/constants/colors.dart';
+import 'package:movie_app/cubits/forgot_password_cubit/forgot_password_cubit.dart';
+import 'package:movie_app/cubits/forgot_password_cubit/forgot_password_state.dart';
 import 'package:movie_app/shared/components/app_branding.dart';
 import 'package:movie_app/shared/components/copyright_widget.dart';
 import 'package:movie_app/shared/components/customized_container_widget.dart';
@@ -8,11 +11,24 @@ import 'package:movie_app/views/forgot_password/components/forgot_password_field
 import 'package:movie_app/views/forgot_password/components/reset_link_button.dart';
 import 'package:movie_app/views/register/components/already_have_an_acc_widget.dart';
 
-class ForgotPasswordView extends StatelessWidget {
+class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({super.key});
 
   @override
+  State<ForgotPasswordView> createState() => _ForgotPasswordViewState();
+}
+
+class _ForgotPasswordViewState extends State<ForgotPasswordView> {
+  final emailController = TextEditingController();
+  @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final formkey = GlobalKey<FormState>();
     return Scaffold(
       backgroundColor: Color(0xFFf8f9fb),
       appBar: PreferredSize(
@@ -60,12 +76,29 @@ class ForgotPasswordView extends StatelessWidget {
                         child: Text('Email Address'),
                       ),
                       const SizedBox(height: 5),
-                      ForgotPasswordField(
-                        icon: Icons.email_outlined,
-                        hintText: 'name@example.com',
+                      Form(
+                        key: formkey,
+                        child: ForgotPasswordField(
+                          icon: Icons.email_outlined,
+                          hintText: 'name@example.com',
+                        ),
                       ),
                       const SizedBox(height: 20),
-                      const ResetLinkButton(),
+                      BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
+                        builder: (context, state) {
+                          return ResetLinkButton(
+                            onPressed: () {
+                              if (!formkey.currentState!.validate()) {
+                                return;
+                              }
+                              context.read<ForgotPasswordCubit>().resetPassword(
+                                email: emailController.text,
+                              );
+                            },
+                            isLoading: state is ForgotPasswordLoadingState,
+                          );
+                        },
+                      ),
                       AlreadyHaveAnAccWidget(txt: 'Remember your password?'),
                     ],
                   ),
